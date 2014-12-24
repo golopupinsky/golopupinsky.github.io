@@ -1,159 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+---
+layout: default
+---
 
-    <title>Golopupinsky</title>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">    
+      
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-
-    <!-- Fonts from Google Fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet" type="text/css">
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <a class="navbar-brand" href="#"><b>GOLOPUPINSKY BLOG</b></a>
+      <div class="entry">
+        {{ post.content | truncatewords:40}}
       </div>
-    </div>
-
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-lg-offset-3">
-                    <center>
-                        <h1>Thoughts on software development</h1>
-                        <h2>(iOS / OS X)</h2>
-                    </center>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	<div class="container">
-		<!--
-        <div class="row mt centered">
-			<div class="col-lg-6 col-lg-offset-3">
-				<h1>Title</h1>
-                <h3>Subtitle</h3>
-			</div>
-		</div>
-        -->
-        <div class="row mt centered">
-			<div class="col-lg-3">
-				<img src="purge-icon.png" width="180" alt="">
-			</div>
-            
-            <div class="col-lg-8 text-left">
-                <h4>Memory Purge development</h4>
-                <p>So i've decided to start developing for OS X. My first app was supposed to be very simple.<br>
-                I also wanted to try out Swift - new iOS/OS X programming language.<br>
-                The simpliest project I came up with was operatve memory cleaning (purging) app. Basicly what app was supposed to do is invoking "purge" terminal command.<br>
-                </p>
-                
-                <div class="spoiler2">
-                    <div class="spoiler-btn"><a href="#" onclick="return false">Turned out it was not as simple as it seemed to be.</a></div>
-                    <div class="spoiler-body collapse">
-                        <p>
-                        First of all, OS X development is a torture (compared to iOS).<br>
-                        Documentation is outdated, community is small (or better sad tiny), official support/bugreport forum is almost dead, nothing could be found via google/stackoverflow and so on.<br><br>
-                        
-                        Second, the Swift, language that was released before standart library and even its syntax(!) rules were stabilized. Many swift examples found now on the internet could not be compiled because of that. Although Swift is a great modern language and probably will completely replace Objective-C one day, it's not production-ready yet. <br><br>
-                        
-                        Third major issue I faced was 10.9 (Mavericks) OS X update that started requiring super user privileges for "purge" command. So I either had to ask password every time user invokes memory cleaning from my app or try implementing memory cleaning without calling purge. First option was not even considered and second one was declined after a bit of testing. After some time I came up with third option: modifying sudoers file. That also requires root privs but luckily only once. That's actually a very bad practive since breaking sudoers file <a href="http://astrails.com/blog/2009/9/29/how-to-fix-a-hosed-etc-sudoers-file-on-mac-osx" onclick="return false">may cause some troubles</a> but sometimes you just don't have other choice.<br>
-                        The way I update sudoers is probably the safest. Here it is:
-                        <ol>
-                            <li>Copy sudoers to temporary directory</li>
-                            <li>Modify the copy</li>
-                            <li>Check the copy with "visudo"</li>
-                            <li>If and only if visudo gives no error - overwrite the original file with modified copy</li>
-                        </ol>
-                        <br>
-                        
-                        After sudoers file is updated there's no need to enter root password every time the purge is invoked. Hurray!
-                        <br><br>
-                        Unfortunately this was not the end.<br>
-                        Application also had to display total and free memory and autostart on login.<br>
-                        Autostart is perfectly described on the internet? just google it. So I won't touch it here.<br>
-                        Total and free memory querying on the other hand is not described anywhere, so I'll also won't touch it here :) especially since I'm unhappy with the way I had to implement that part.<br>
-                        
-                        Ok, just kidding. I'll describe that next time I update this article.
-
-                        </p>
-                        
-                        <div class="spoiler">
-                            <div class="spoiler-btn">Screenshot</div>
-                            <div class="spoiler-body collapse">
-                                <img src="http://indiemindie.com/scrn/memorypurge/purge-screenshot.png" />
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                
-
-            </div>
-            
-        </div>    <!-- row centered -->
-        
-        
-        <div class="row mt centered">
-            <div class="col-lg-3">
-                <img src="hello-world.png" width="180" alt="">
-                    </div>
-            
-            <div class="col-lg-8 text-left">
-                <h4>Hello World!</h4>
-                <p>I hereby announce this blog open.</p>
-            </div>
-        </div>    <!-- row centered -->
-
-        
-    <hr>
-    </div>
-    
-    </div>
-    <div class="centered">
-        <p>&copy golopupinsky.github.io</p>
-    </div>
-	</div>
-    
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    
-    
-    <script>
-        $(function ()
-          { $("#pop").popover({placement:'bottom'}  );
-          });
-    </script>
-
-    <script type="text/javascript">
-        $.fn.ready(function() {
-                   // Spoiler
-                   $(document).on('click', '.spoiler-btn', function (e) {
-                                  e.preventDefault()
-                                  $(this).parent().children('.spoiler-body').collapse('toggle')
-                                  });
-                   });
-    </script>
-  </body>
-</html>
+      
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
