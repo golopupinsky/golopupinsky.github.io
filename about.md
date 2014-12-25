@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hi! My name is Sergey. I am a software engineer.
 
-### More Information
+I currently work as a freelance iOS/OS X developer.
+I also have some Android/Java/C#/C/C++ experience.
 
-A place to include any other types of information that you'd like to include about yourself. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[golopupinsky@gmail.com](mailto:golopupinsky@gmail.com)
