@@ -16,7 +16,7 @@ Second, the Swift, language that was released before its standart library and ev
 
 Third major issue I faced was 10.9 (Mavericks) OS X update that started requiring super user privileges for "purge" command. So I either had to ask password every time user invokes memory cleaning from my app or implement memory cleaning without calling purge (by means of allocating small memory chunks which extrude cached memory). 
 First option was not even considered and second one was declined after a bit of testing. Eventually I came up with third option: modifying sudoers file. That also requires root privs but luckily only once. 
-That's actually a very bad practice since breaking sudoers file may cause some [troubles]((http://astrails.com/blog/2009/9/29/how-to-fix-a-hosed-etc-sudoers-file-on-mac-osx)) but sometimes you just don't have other choice.
+That's actually a very bad practice since breaking sudoers file may cause some [troubles](http://astrails.com/blog/2009/9/29/how-to-fix-a-hosed-etc-sudoers-file-on-mac-osx) but sometimes you just don't have other choice.
 The way I update sudoers is probably the safest. Here it is:
 
 1. Copy sudoers to temporary directory
@@ -29,7 +29,7 @@ After sudoers file is updated there's no need to enter root password every time 
 Unfortunately this was not the end.
 Application also had to display total and free memory and autostart on login.
 I won't touch autostart here - it is perfectly described on the internet.
-Total and free memory querying on the other hand is not described anywhere at all, so I'll also won't touch it here :) especially since I'm unhappy with the way I implemented that part.
+Total and free memory querying on the other hand is not described anywhere at all, so I also won't touch it here :) 
+Especially since I'm unhappy with the way I implemented that part.
 
-Ok, just kidding. I'll describe that next time I update this article.
-
+Ok, just kidding. I'll update this article soon. Stay tuned...
