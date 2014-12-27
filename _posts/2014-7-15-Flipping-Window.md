@@ -4,7 +4,7 @@ title: Flipping Window OS X
 ---
 This is a quick note about window flipping effect under OS X.
 
-I've found the code somwhere on the internet and I like how it works (although, I don't like how it looks).
+I've found the code somwhere on the internet and I like how the effect looks (although, I don't like the code).
 
 Basicly the process consists of these steps:
 
@@ -18,7 +18,3 @@ This is how it looks:
 ![]({{ site.baseurl }}/images/window-flip.gif)
 
 Even though the source code is not pretty at all it is [worth looking at](https://github.com/golopupinsky/NSWindow-flip-demo). 
-
-
-
-
