@@ -12,7 +12,7 @@ Turned out it was not as simple as it seemed to be.
 First of all, OS X development is a torture (compared to iOS).
 Documentation is outdated, community is small (or better sad tiny), official support/bugreport forum is almost dead, nothing could be found via google/stackoverflow and so on.
 
-Second, the Swift, language that was released before its standart library and even its syntax(!) were stabilized. Many swift examples found now on the internet could not be compiled because of that. Although Swift is a great modern language and probably will completely replace Objective-C one day, it's not production-ready yet. 
+Second, the Swift, language that was released before its standart library and even its syntax(!) were stabilized. Should I say more?
 
 Third major issue I faced was 10.9 (Mavericks) OS X update that started requiring super user privileges for "purge" command. So I either had to ask password every time user invokes memory cleaning from my app or implement memory cleaning without calling purge (by means of allocating small memory chunks which extrude cached memory). 
 First option was not even considered and second one was declined after a bit of testing. Eventually I came up with third option: modifying sudoers file. That also requires root privs but luckily only once. 
@@ -32,4 +32,4 @@ I won't touch autostart here - it is perfectly described on the internet.
 Total and free memory querying on the other hand is not described anywhere at all, so I also won't touch it here :) 
 Especially since I'm unhappy with the way I implemented that part.
 
-Ok, just kidding. I'll update this article soon. Stay tuned...
+Ok, just kidding. I'll update this article one day. Stay tuned...
