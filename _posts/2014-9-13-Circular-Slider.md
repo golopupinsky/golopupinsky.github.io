@@ -77,6 +77,6 @@ By varying the subdiv variable we can achieve various results.
 
 (image borrowed from aforementioned SO thread)
 
-The [slider](https://github.com/golopupinsky/CircularSlider) we were working at now looks like this
+The [slider](https://github.com/golopupinsky/CircularSlider) we were working at looks like this
 
 ![]({{ site.baseurl }}/images/circular-slider.png)
