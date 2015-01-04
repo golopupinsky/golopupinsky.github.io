@@ -111,6 +111,7 @@ Now that we know how variables are computed we can look at the differences of tw
 
 First of all, x coordinate depends on sine and z depends on cosine. This is easy to understand by looking at extreme values.
 
+<center>
 <table style="border:2px solid black; border-collapse:collapse;">
   <tr style="border:1px solid black">
     <th style="border:1px solid black">sin</th>    
@@ -134,7 +135,7 @@ First of all, x coordinate depends on sine and z depends on cosine. This is easy
   </tr>
 
 </table>
-
+</center>
 
 Since we want our views to go farther from us as we scroll we're using cosine because it decreases on interval [0;π]. On the other hand we want x coordinate to increase with scrolling only on half of that interval, i.e. [0;π/2] and then decrease on [π/2;3π/2] which is exactly what sine does. 
 
