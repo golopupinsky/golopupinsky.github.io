@@ -34,7 +34,7 @@ First of all, create view class and add a ```CGPoint panDistance``` variable to 
     {
         CGPoint t = [pan translationInView:self];
         panDistance = CGPointMake(panStart.x + t.x, panStart.y + t.y);
-		[self layoutSubviews];
+        [self layoutSubviews];
     }
 }
 {% endhighlight %}
@@ -111,13 +111,14 @@ Now that we know how variables are computed we can look at the differences of tw
 
 First of all, x coordinate depends on sine and z depends on cosine. This is easy to understand by looking at extreme values.
 
+<center>
 | sin            | cos          |
 |----------------|--------------|
 | sin(0) = 0     | cos(0) = 1   |
 | sin(π/2) = 1   | cos(π/2) = 0 |
 | sin(π) = 0     | cos(π) = -1  |
 | sin(3π/2) = -1 | cos(3π/2) = 0|
-
+</center>
 
 Since we want our views to go farther from us as we scroll we're using cosine because it decreases on interval [0;π]. On the other hand we want x coordinate to increase with scrolling only on half of that interval, i.e. [0;π/2] and then decrease on [π/2;3π/2] which is exactly what sine does. 
 
