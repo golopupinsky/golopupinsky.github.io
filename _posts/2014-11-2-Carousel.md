@@ -5,7 +5,7 @@ title: Carousel
 This is the basic example of iOS carousel view.
 It is not as advanced as for example [iCarousel](https://github.com/nicklockwood/iCarousel) but it gives understanding of basics.
 
-The idea behind carouselish-controlls is that while scrolling elements move farther from viewer in perspective. 
+The idea behind carouselish-controlls is that elements move farther  in perspective during scrolling. 
 
 There are two ways of implementing that behaviour:
 
