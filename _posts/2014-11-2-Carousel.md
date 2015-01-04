@@ -111,7 +111,7 @@ Now that we know how variables are computed we can look at the differences of tw
 
 First of all, x coordinate depends on sine and z depends on cosine. This is easy to understand by looking at extreme values.
 
-<table>
+<table cellspacing="2" border="2" cellpadding="5" rules="rows">
   <tr>
     <td>qwe</td>    <td>rty</td>                                        
   </tr>
