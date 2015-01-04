@@ -113,34 +113,28 @@ First of all, x coordinate depends on sine and z depends on cosine. This is easy
 
 <table style="border:2px solid black; border-collapse:collapse;">
   <tr style="border:1px solid black">
-    <td>1</td>    <td>2</td>                                        
+    <th style="border:1px solid black">sin</th>    
+    <th style="border:1px solid black">cos</th>                                        
   </tr>
   <tr style="border:1px solid black">
-    <td>3333</td>    <td>42112313123</td>                                        
+    <td style="border:1px solid black">sin(0) = 0</td>    
+    <td style="border:1px solid black">cos(0) = 1</td>                                        
   </tr>
   <tr style="border:1px solid black">
-    <td>qwe</td>    <td>rty</td>                                        
+    <td style="border:1px solid black">sin(π/2) = 1</td>    
+    <td style="border:1px solid black">cos(π/2) = 0</td>                                        
   </tr>
   <tr style="border:1px solid black">
-    <td>qwe</td>    <td>rty</td>                                        
+    <td style="border:1px solid black">sin(π) = 0</td>
+    <td style="border:1px solid black">cos(π) = -1</td>                                        
   </tr>
+  <tr style="border:1px solid black">
+    <td style="border:1px solid black">sin(3π/2) = -1</td>    
+    <td style="border:1px solid black">cos(3π/2) = 0</td>                                        
+  </tr>
+
 </table>
 
-
-<center>
-<div>
-<p>
-
-| sin            | cos          |
-|----------------|--------------|
-| sin(0) = 0     | cos(0) = 1   |
-| sin(π/2) = 1   | cos(π/2) = 0 |
-| sin(π) = 0     | cos(π) = -1  |
-| sin(3π/2) = -1 | cos(3π/2) = 0|
-
-</p>
-</div>
-</center>
 
 Since we want our views to go farther from us as we scroll we're using cosine because it decreases on interval [0;π]. On the other hand we want x coordinate to increase with scrolling only on half of that interval, i.e. [0;π/2] and then decrease on [π/2;3π/2] which is exactly what sine does. 
 
