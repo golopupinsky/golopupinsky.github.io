@@ -114,8 +114,8 @@ First of all, x coordinate depends on sine and z depends on cosine. This is easy
 <center>
 <table style="border:2px solid black; border-collapse:collapse;">
   <tr style="border:1px solid black">
-    <th style="border:1px solid black">sin</th>    
-    <th style="border:1px solid black">cos</th>                                        
+    <th style="border:1px solid black"><b>sin</b></th>    
+    <th style="border:1px solid black"><b>cos</b></th>                                        
   </tr>
   <tr style="border:1px solid black">
     <td style="border:1px solid black">sin(0) = 0</td>    
