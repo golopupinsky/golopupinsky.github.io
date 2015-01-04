@@ -32,8 +32,8 @@ First of all, create view class and add a ```CGPoint panDistance``` variable to 
     
     if(pan.state == UIGestureRecognizerStateChanged)
     {
-        CGPoint translation = [pan translationInView:self];
-        panDistance = CGPointMake(panStart.x + translation.x, panStart.y + translation.y);
+        CGPoint t = [pan translationInView:self];
+        panDistance = CGPointMake(panStart.x + t.x, panStart.y + t.y);
 		[self layoutSubviews];
     }
 }
@@ -42,7 +42,7 @@ First of all, create view class and add a ```CGPoint panDistance``` variable to 
 
 This method will store current pan distance and also call ```layoutSubviews``` when needed. Let's look at ```layoutSubviews``` implementation.
 
-```objc
+{% highlight objc %}
 -(void)layoutSubviews
 {
     [super layoutSubviews];
@@ -51,13 +51,13 @@ This method will store current pan distance and also call ```layoutSubviews``` w
         view.layer.transform = [self transformForViewAtIndex:i];;
     }
 }
+{% endhighlight %}
 
-```
 Not too much here, just setting a layer's transform for every view in subviews array. I do not provide code for initializing subviews array since I assume you can write it on your own (or just get full project [here](https://github.com/golopupinsky/Carousel)). But I discourage you from iterating over view's sibviews property here, because their ordering may change and some of them may not be the moving subviews of carousel. You should manage subviews array on your own.
 
 So, ```layoutSubviews``` method calls ```transformForViewAtIndex:``` providing index of subview.
 
-```
+{% highlight objc %}
 -(CATransform3D)transformForViewAtIndex:(NSUInteger)index
 {
     CATransform3D transform = CATransform3DIdentity;
@@ -72,13 +72,13 @@ So, ```layoutSubviews``` method calls ```transformForViewAtIndex:``` providing i
                                        );
     return transform;
 }
-```
+{% endhighlight %}
 
 First, ```transformForViewAtIndex:``` sets ```m34``` member of transform structure. This variable is responsible for perspective transforms - it controlls how fast element shrinks depending on distance to it. I am not going to describe this here, you can read more for example [here](http://milen.me/writings/core-animation-3d-model/).
 Second, we can see that ```transformForViewAtIndex:``` depends on two other methods: ```xTranslation:``` and ```zTranslation:```. So far we have not seen anything that could be responsible for calculating subviews coordinates. All the magic should be inside those methods. And it is indeed there.
 
 
-```
+{% highlight objc %}
 -(float)xTranslation:(NSUInteger)index
 {
     float screenW = CGRectGetWidth([UIScreen mainScreen].bounds);
@@ -97,8 +97,7 @@ Second, we can see that ```transformForViewAtIndex:``` depends on two other meth
     
     return cos(initialPhase + panPhase) * screenW/10;
 }
-
-```
+{% endhighlight %}
 
 These methods are very similar. They actually contain copy-pasted code. Ouch! This should be rewritten! Yes, of course. But for the sake of simplicity of this tutorial I decided to leave things as they are. 
 
@@ -129,7 +128,7 @@ And that's it. This is all the basics you need to implement your own carousel vi
 The last thing we haven't discussed is movement decceleration after gesture finishes. Again, for the sake of simplicity we'll use timer for that (though that's probably the worst possible solution).
 Add following code to the end of ```panned``` mathod.
 
-```
+{% highlight objc %}
     if(pan.state == UIGestureRecognizerStateEnded || 
     	pan.state == UIGestureRecognizerStateCancelled)
     {
@@ -144,7 +143,7 @@ Add following code to the end of ```panned``` mathod.
         [[NSRunLoop mainRunLoop]addTimer:fadeTimer 
         			forMode:NSRunLoopCommonModes];
     }
-```
+{% endhighlight %}
 
 Also, add ```[self stopFading]``` call to the beginning of ```if(pan.state == UIGestureRecognizerStateBegan)``` clause of ```panned``` mathod.
 
