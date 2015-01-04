@@ -19,7 +19,9 @@ We'll go with manipulation z coordinate as this seems to be the best way of unde
 
 First of all, create view class and add a ```CGPoint panDistance``` variable to it. Also add a ```UIPanGestureRecognizer```. The action of gesture recognizer should look like this.
 
+
 ```
+
 -(void)panned:(UIPanGestureRecognizer*)pan
 {
     static CGPoint panStart;
