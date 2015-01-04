@@ -152,11 +152,13 @@ Add following code to the end of ```panned``` mathod.
     {
         CGPoint v = [pan velocityInView:self];
         
-        fadeTimer = [NSTimer 	timerWithTimeInterval:0.05 
-						target:self
-						selector:@selector(panFade) 
-						userInfo:[NSValue valueWithCGPoint:v] 
-						repeats:YES];
+        fadeTimer = 
+        [NSTimer
+       	timerWithTimeInterval:0.05
+        target:self
+        selector:@selector(panFade)
+        userInfo:[NSValue valueWithCGPoint:v]
+        repeats:YES];
         						
         [[NSRunLoop mainRunLoop]addTimer:fadeTimer 
         			forMode:NSRunLoopCommonModes];
