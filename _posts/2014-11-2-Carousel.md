@@ -33,8 +33,7 @@ First of all, create view class and add a ```CGPoint panDistance``` variable to 
     if(pan.state == UIGestureRecognizerStateChanged)
     {
         CGPoint translation = [pan translationInView:self];
-        panDistance = CGPointMake(	panStart.x + translation.x,
-        							panStart.y + translation.y);
+        panDistance = CGPointMake(panStart.x + translation.x, panStart.y + translation.y);
 		[self layoutSubviews];
     }
 }
@@ -43,7 +42,7 @@ First of all, create view class and add a ```CGPoint panDistance``` variable to 
 
 This method will store current pan distance and also call ```layoutSubviews``` when needed. Let's look at ```layoutSubviews``` implementation.
 
-```
+```objc
 -(void)layoutSubviews
 {
     [super layoutSubviews];
