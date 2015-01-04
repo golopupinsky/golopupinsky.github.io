@@ -38,7 +38,6 @@ First of all, create view class and add a ```CGPoint panDistance``` variable to 
 		[self layoutSubviews];
     }
 }
-
 ```
 
 This method will store current pan distance and also call ```layoutSubviews``` when needed. Let's look at ```layoutSubviews``` implementation.
