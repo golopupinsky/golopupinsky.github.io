@@ -111,7 +111,7 @@ Let's look at the common part of methods - variables.
 
 Now that we know how variables are computed we can look at the differences of two methods.
 
-First of all, x coordinate depends on sine and z depends on cosine. This is easy to understand by looking at extreme values. 
+First of all, x coordinate depends on sine and z depends on cosine. This is easy to understand by looking at extreme values.
 
 | sin            | cos          |
 |----------------|--------------|
@@ -120,13 +120,45 @@ First of all, x coordinate depends on sine and z depends on cosine. This is easy
 | sin(π) = 0     | cos(π) = -1  |
 | sin(3π/2) = -1 | cos(3π/2) = 0|
 
+
 Since we want our views to go farther from us as we scroll we're using cos since it decreases on interval [0;π]. On the other hand we want x coordinate to increase with scrolling only half of that interval, i.e. [0;π/2] and then decrease on [π/2;3π/2] which is exactly what sin does. 
 
 We still have a little bit more complex x coordinate computations because of the fact that we have to start from the center of the screen (we add screenCenter) and also because rotating view initial coordinate is always at the top left corner and not in center (subtracting SUBVIEW_SIZE/2 to account for that).
 
-And that's it. This is all the basics you need to implement your own carousel view. I left couple topics not covered here. But I never intended to cover everything in this tutorial. 
+And that's it. This is all the basics you need to implement your own carousel view.  
 
-Feel free to grab project [source](https://github.com/golopupinsky/Carousel) from github, it's slightly more advanced. 
+The last thing we haven't discussed is movement decceleration after gesture finishes. Again, for the sake of simplicity we'll use timer for that (though that's probably the worst possible solution).
+Add following code to the end of ```panned``` mathod.
 
-Remember, this implementation is very basic and it lacks many important things. Do not use it in production code.
+```
+    if(pan.state == UIGestureRecognizerStateEnded || 
+    	pan.state == UIGestureRecognizerStateCancelled)
+    {
+        CGPoint v = [pan velocityInView:self];
+        
+        fadeTimer = [NSTimer 	timerWithTimeInterval:0.05 
+        						target:self
+        						selector:@selector(panFade) 
+        						userInfo:[NSValue valueWithCGPoint:v] 
+        						repeats:YES];
+        						
+        [[NSRunLoop mainRunLoop]addTimer:fadeTimer 
+        			forMode:NSRunLoopCommonModes];
+    }
+```
 
+Also, add ```[self stopFading]``` call to the beginning of ```if(pan.state == UIGestureRecognizerStateBegan)``` clause of ```panned``` mathod.
+
+Lastly, add two methods:
+ 
+* panFade - for changing the ```panDistance``` for some time after gesture ends
+* stopFading - for invalidationg timer and cleaning up
+
+Try implementing those on your own as an exercise.
+
+Feel free to grab full project [source](https://github.com/golopupinsky/Carousel) from github. 
+
+*Also, make sure to check [tweaks-branch](https://github.com/golopupinsky/Carousel/tree/tweaks-branch) of the project. It's more advanced and cleaner than master branch. Note: it uses cocoapods, so only open project with '.xcworkspace' file.*
+
+
+Remember, current implementation is very basic. It lacks many important things and serves only educational purposes. Do not use it in production code.
