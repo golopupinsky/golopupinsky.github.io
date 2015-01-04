@@ -17,11 +17,10 @@ Scaling allows doing fancy effects like size shivering, disproportional size cha
 
 We'll go with manipulation z coordinate as this seems to be the best way of understanding what exactly happens.
 
-First of all, create view class and add a ```CGPoint panDistance``` variable to it. Also add a ```UIPanGestureRecognizer```. The action of gesture recognizer should look like this.
+First of all, create view class and add a ```CGPoint panDistance``` variable to it. Also add a ```UIPanGestureRecognizer```. The action of gesture recognizer should look like this:
 
 
 ```
-
 -(void)panned:(UIPanGestureRecognizer*)pan
 {
     static CGPoint panStart;
