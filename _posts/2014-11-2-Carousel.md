@@ -113,10 +113,10 @@ First of all, x coordinate depends on sine and z depends on cosine. This is easy
 
 <table cellspacing="2" border="2" cellpadding="5" rules="rows">
   <tr>
-    <td>qwe</td>    <td>rty</td>                                        
+    <td>1</td>    <td>2</td>                                        
   </tr>
     <tr>
-    <td>qweqqq</td>    <td>rty</td>                                        
+    <td>3333</td>    <td>42112313123</td>                                        
   </tr>
     <tr>
     <td>qwe</td>    <td>rty</td>                                        
