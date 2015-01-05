@@ -48,8 +48,7 @@ Let's look at both of them in detail.
 
 Here's the simple example of Core Animation gradient.
 
-```
-
+{% highlight objc %}
 - (void) setupGradient
 {
     CAGradientLayer* gradient = [CAGradientLayer layer];
@@ -60,14 +59,13 @@ Here's the simple example of Core Animation gradient.
 
     [self.layer addSublayer:gradient];        
 }
+{% endhighlight %}
 
-```
 Not much to describe here, gradient layer is created and added as sublayer. 
 
 Now let's look at Core Graphics approach.
 
-```
-
+{% highlight objc %}
 - (void)drawRect:(CGRect)rect
 {
 	//1
@@ -100,7 +98,7 @@ Now let's look at Core Graphics approach.
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorspace);
 }
-```
+{% endhighlight %}
 
 More code here. Let's emphasize the steps:
 
