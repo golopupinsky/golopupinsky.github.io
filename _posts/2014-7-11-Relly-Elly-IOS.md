@@ -55,7 +55,7 @@ Here's the simple example of Core Animation gradient.
     
     gradient.frame = self.bounds;
     gradient.colors = @[(id)[UIColor blackColor].CGColor, 
-						(id)[UIColor whiteColor].CGColor];
+                        (id)[UIColor whiteColor].CGColor];
 
     [self.layer addSublayer:gradient];        
 }
@@ -68,7 +68,7 @@ Now let's look at Core Graphics approach.
 {% highlight objc %}
 - (void)drawRect:(CGRect)rect
 {
-	//1
+    //1
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
     
     //2
@@ -80,19 +80,19 @@ Now let's look at Core Graphics approach.
     //3
     CGPoint topCenter = CGPointMake(CGRectGetMidX(rect), 0.0f);
     CGPoint lowCenter = CGPointMake(CGRectGetMidX(rect), 
-    								CGRectGetMaxY(rect));
+                                    CGRectGetMaxY(rect));
 
-	//4
+    //4
     CGGradientRef gradient = 
     	CGGradientCreateWithColorComponents(colorspace, 
-										    components, 
-										    locations, 
-										    num_locations);
-    CGContextDrawLinearGradient(currentContext, //ctx
-    							gradient, 		//gradient
-    							topCenter, 		//start
-    							lowCenter, 		//end
-    							0);				//options
+    	                                    components,
+    	                                    locations,
+    	                                    num_locations);
+    CGContextDrawLinearGradient(currentContext,//ctx
+                                gradient,      //gradient
+                                topCenter,     //start
+                                lowCenter,     //end
+                                0);            //options
     
     //5
     CGGradientRelease(gradient);
