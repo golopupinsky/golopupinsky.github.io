@@ -15,7 +15,7 @@ There's a nice [SO discussion](http://stackoverflow.com/questions/11783114/draw-
 Long story short, here's slightly refined SO code.
 
 {% highlight objc %}
-		//1
+        //1
         int subdiv=512;
         float interiorPerim = M_PI*radius;
         float exteriorPerim = M_PI*(radius+WIDTH);
@@ -32,15 +32,23 @@ Long story short, here's slightly refined SO code.
 
         //3
         float incr = 2 * M_PI / subdiv; //increment angle
-        CGContextTranslateCTM(	ctx, 
-        						CGRectGetWidth(self.bounds)/2, 
-        						CGRectGetHeight(self.bounds)/2);
+        CGContextTranslateCTM(	
+        ctx, 
+        CGRectGetWidth(self.bounds)/2,
+        CGRectGetHeight(self.bounds)/2);
+        
         CGContextRotateCTM(ctx, M_PI/2);
         CGContextRotateCTM(ctx,-incr/2);
 
-		//4        
+        //4        
         for (int i=0;i<subdiv;i++) {
-            UIColor *c = [UIColor colorWithHue:(float)i/subdiv saturation:1 brightness:1 alpha:1];
+            UIColor *c = 
+            [UIColor 
+            colorWithHue:(float)i/subdiv 
+            saturation:1 
+            brightness:1 
+            alpha:1];
+            
             [c set];
             [cell fill];
             [cell stroke];
