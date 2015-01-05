@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Flipping Window OS X
+title: Flipping Window (OS X)
 ---
 This is a quick note about window flipping effect under OS X.
 
