@@ -14,7 +14,7 @@ There's a nice [SO discussion](http://stackoverflow.com/questions/11783114/draw-
 
 Long story short, here's slightly refined SO code.
 
-```
+{% highlight objc %}
 		//1
         int subdiv=512;
         float interiorPerim = M_PI*radius;
@@ -46,9 +46,7 @@ Long story short, here's slightly refined SO code.
             [cell stroke];
             CGContextRotateCTM(ctx, -incr);
         }
-
-
-```
+{% endhighlight %}
 
 This is an incomplete excerpt from slider drawRect method.  [Full project](https://github.com/golopupinsky/CircularSlider).
 
