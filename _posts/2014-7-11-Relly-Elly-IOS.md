@@ -114,7 +114,7 @@ Let's start with quality. I borrowed an image from [this SO discussion](http://s
 
 ![](http://i.stack.imgur.com/NlPaw.png)
 
-You may need to look carefully and/or find a higher quality monitor to see the difference, but when it comes to mobile devices screens everything becomes obvious. CAGradientLayer picture looks 'steppy'. Why? Well, actually, gradients banding is expected effect and additional steps (noise,dithering) should be applied to prevent it. Since Core Graphics draws gradient on CPU it is capable to apply basicly any computations it wants.
+You may need to look carefully and/or find a higher quality monitor to see the difference, but when it comes to mobile device screen everything becomes obvious. CAGradientLayer picture looks 'steppy'. Why? Well, actually, gradients banding is expected effect and additional steps (noise,dithering) should be applied to prevent it. Since Core Graphics draws gradient on CPU it is capable to apply basicly any computations it wants.
 Core Animation on the other hand draws gradients directly on GPU and therefore has limits on techniques it may apply (GPUs have much more limited instructions sets).
 
 So, now we know that Core Animation does not apply smoothing steps and Core Graphics does. The final question is "What's the cost of those steps?". Turns out, the cost is huge. 
