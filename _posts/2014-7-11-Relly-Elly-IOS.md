@@ -124,6 +124,9 @@ Obviously, no matter how big the picture quality difference was, Core Graphics a
 
 So the task became simple: make CAGradientLayer look nice. 
 
+As far as I know there's no automatic algorithm of picking gradient colors that won't produce banding, so I've had to pick colors manually by means of trial and error. Eventually I ended up with nice set of gradients.
+
+//TODO: gradients pictures here 
 
 
 *To be continued...*
