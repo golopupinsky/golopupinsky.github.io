@@ -130,6 +130,10 @@ As far as I know there's no automatic algorithm of picking gradient colors that 
 
 This is basic description of gradients animations in RellyElly. It's also worth noting that keeping animated cells in sync may be a tricky task, but that's the story for another day.
 
+### Gestures
 
+RellyElly for iOS is a gesture driven app. It's supposed to be very intuitive and easy to use. Being inspired by Clear app it borrows some of it's nice ideas and further develops those.
+
+So here's the  
 
 *To be continued...*
