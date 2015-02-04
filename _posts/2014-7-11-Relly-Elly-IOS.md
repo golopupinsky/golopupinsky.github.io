@@ -39,7 +39,7 @@ Anyway, mobile and 'BIG' apps were supposed to sync via cloud. Mobile-to-mobile 
 
 Probably the trickiest part about the Relly Elly iOS app was the way gradient animation is applied. I've tested a dozen implementations before found a proper one. 
 
-There are two ways one can draw a gradient in Cocoa:
+There are two basic ways one can generate and draw a gradient in Cocoa:
 
 1. Core Graphics way
 2. Core Animation way
@@ -127,6 +127,7 @@ So the task became simple: make CAGradientLayer look nice.
 As far as I know there's no automatic algorithm of picking gradient colors that won't produce banding, so I've had to pick colors manually by means of trial and error. Eventually I ended up with nice set of gradients.
 
 //TODO: gradients pictures here 
+
 
 
 *To be continued...*
