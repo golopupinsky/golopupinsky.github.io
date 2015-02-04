@@ -128,7 +128,7 @@ As far as I know there's no automatic algorithm of picking gradient colors that 
 
 //TODO: gradients pictures here 
 
-This is basic description of gradients animations in RellyElly. It's also worth noting that keeping animated cells in sync may be a tricky task, but that story if for another day.
+This is basic description of gradients animations in RellyElly. It's also worth noting that keeping animated cells in sync may be a tricky task, but that's the story for another day.
 
 
 
