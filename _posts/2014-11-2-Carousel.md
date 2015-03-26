@@ -176,7 +176,7 @@ Try implementing those on your own as an exercise.
 
 Feel free to grab full project [source](https://github.com/golopupinsky/Carousel) from github. 
 
-*Also, make sure to check out [tweaks-branch](https://github.com/golopupinsky/Carousel/tree/tweaks-branch) of the project. It's more advanced and cleaner than master branch. Note: it uses cocoapods, so only open project with '.xcworkspace' file.*
+*Also, make sure to check out [tweaks-branch](https://github.com/golopupinsky/Carousel/tree/tweaks-branch) of the project. It's more advanced and cleaner than master branch. Note: it uses cocoapods*
 
 
 Remember, current implementation is very basic. It lacks many important things and serves only educational purposes. Do not use it in production.
