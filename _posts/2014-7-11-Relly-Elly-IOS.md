@@ -135,6 +135,7 @@ This is basic description of gradients animations in RellyElly. It's also worth 
 RellyElly for iOS is a gesture driven app. It's supposed to be very intuitive and easy to use. Being inspired by Clear app it borrows some of it's nice ideas and further develops those.
 
 So here's the list of available gestures
+
 0. Pull down to add
 1. Pull up to show settings
 2. Pan row left to remove
